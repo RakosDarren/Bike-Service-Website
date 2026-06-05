@@ -1,7 +1,7 @@
 import ServiceCard from '../../components/ServiceCard/ServiceCard'
 import Icon from '../../components/Icon/Icon'
 import { premiumServices, quickServices } from '../../data/services'
-import heroImg from '../../assets/hero.png'
+import heroImg from '../../assets/Hero.png'
 import './Home.css'
 
 function Home({ onBookService, onWalkIn }) {
