@@ -1,0 +1,229 @@
+.booking-page {
+  min-height: calc(100vh - 64px);
+}
+
+.booking-top {
+  background: var(--bg-section);
+  border-bottom: 1px solid var(--border-light);
+  padding: 2.5rem 0 2rem;
+  text-align: center;
+}
+
+.booking-top h1 {
+  font-size: 2rem;
+  color: var(--green-dark);
+  margin-top: 0.5rem;
+}
+
+.booking-body {
+  padding: 2.5rem 0 4rem;
+}
+
+.booking-layout {
+  display: flex;
+  justify-content: center;
+}
+
+.booking-main {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Service selector */
+.service-selector-box {
+  background: var(--bg-white);
+  border: 1.5px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem 1.5rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.service-selector-box label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--text-light);
+}
+
+.service-selector-box select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1.5px solid var(--green-light);
+  border-radius: var(--radius-md);
+  background: var(--bg-white);
+  color: var(--text-dark);
+  font-weight: 600;
+  font-size: 0.95rem;
+  appearance: auto;
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+}
+
+.service-selector-box select:focus {
+  outline: 2px solid var(--green-light);
+  border-color: var(--green-dark);
+}
+
+.service-selector-desc {
+  font-size: 0.82rem;
+  color: var(--text-medium);
+  line-height: 1.5;
+  padding-top: 0.25rem;
+  border-top: 1px solid var(--border-light);
+  margin-top: 0.1rem;
+}
+
+/* Booking sections */
+.booking-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.booking-section h3 {
+  font-size: 1rem;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  color: var(--green-dark);
+}
+
+.booking-section-note {
+  font-size: 0.8rem;
+  color: var(--text-light);
+  margin-top: -0.25rem;
+}
+
+/* Time slots */
+.time-slots {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+
+.time-slot {
+  padding: 0.85rem;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 0.95rem;
+  background: var(--bg-white);
+  border: 1.5px solid var(--border-light);
+  color: var(--text-dark);
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+
+.time-slot:hover:not(.time-slot--selected) {
+  border-color: var(--green-light);
+  color: var(--green-dark);
+  background: var(--green-pale);
+}
+
+.time-slot--selected {
+  background: var(--accent-red);
+  border-color: var(--accent-red);
+  color: #fff;
+}
+
+/* Mechanic select */
+.booking-section select {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border: 1.5px solid var(--border-light);
+  border-radius: var(--radius-md);
+  background: var(--bg-white);
+  color: var(--text-dark);
+  appearance: auto;
+  box-shadow: var(--shadow-sm);
+}
+
+.booking-section select:focus {
+  outline: 2px solid var(--green-light);
+  border-color: var(--green-light);
+}
+
+/* Appointment summary */
+.appt-summary {
+  background: var(--bg-section);
+  border: 1.5px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem 1.5rem;
+}
+
+.appt-summary-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--text-light);
+  margin-bottom: 0.9rem;
+}
+
+.appt-summary-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.appt-summary-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.appt-summary-item span {
+  font-size: 0.75rem;
+  color: var(--text-light);
+}
+
+.appt-summary-item strong {
+  font-size: 0.95rem;
+  color: var(--text-dark);
+}
+
+/* Confirm button */
+.confirm-btn {
+  width: 100%;
+  padding: 1rem;
+  background: var(--green-dark);
+  color: #fff;
+  border-radius: var(--radius-md);
+  font-weight: 700;
+  font-size: 1.05rem;
+  transition: background 0.15s;
+  letter-spacing: 0.3px;
+}
+
+.confirm-btn:not(:disabled):hover {
+  background: var(--green-medium);
+}
+
+/* Back link */
+.back-link {
+  background: none;
+  color: var(--text-medium);
+  font-size: 0.9rem;
+  text-align: center;
+  padding: 0.5rem;
+  transition: color 0.15s;
+}
+
+.back-link:hover {
+  color: var(--text-dark);
+}
+
+@media (max-width: 600px) {
+  .time-slots {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .appt-summary-row {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+  }
+}

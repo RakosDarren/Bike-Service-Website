@@ -1,0 +1,109 @@
+.calendar {
+  background: var(--bg-white);
+  border: 1.5px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.calendar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+}
+
+.calendar-header strong {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  color: var(--text-dark);
+}
+
+.calendar-nav {
+  background: none;
+  border: 1.5px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  width: 32px;
+  height: 32px;
+  font-size: 1.2rem;
+  color: var(--text-medium);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s, border-color 0.15s;
+  line-height: 1;
+}
+
+.calendar-nav:hover:not(:disabled) {
+  background: var(--green-pale);
+  border-color: var(--green-light);
+  color: var(--green-dark);
+}
+
+.calendar-nav:disabled {
+  opacity: 0.3;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 3px;
+}
+
+.calendar-weekday {
+  text-align: center;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: var(--text-light);
+  padding: 0.4rem 0;
+  text-transform: uppercase;
+}
+
+.calendar-day {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: 0.875rem;
+  background: none;
+  color: var(--text-dark);
+  transition: background 0.12s, color 0.12s;
+}
+
+.calendar-day:not(:disabled):not(.calendar-day--selected):hover {
+  background: var(--green-pale);
+  color: var(--green-dark);
+}
+
+.calendar-day--empty {
+  pointer-events: none;
+}
+
+.calendar-day--past {
+  color: var(--text-light);
+}
+
+.calendar-day--today:not(.calendar-day--selected) {
+  font-weight: 700;
+  color: var(--green-medium);
+}
+
+.calendar-day--selected {
+  background: var(--green-dark);
+  color: #fff;
+  font-weight: 600;
+  border-radius: var(--radius-md);
+}
+
+.calendar-selected-label {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--text-medium);
+  font-style: italic;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border-light);
+}
